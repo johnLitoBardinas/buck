@@ -1,0 +1,67 @@
+@mixin checkbox {
+    .subscribe__checkbox {
+        margin-top: 10px;
+        height: 40px;
+        display: flex;
+        flex-direction: row;
+
+        .round {
+
+            > input[type=checkbox] + label {
+                display: block;
+                margin: 0.2em;
+                cursor: pointer;
+                padding: 0.2em;
+                padding-top: 10px;
+
+                &:before {
+                    content: "\2714";
+                    border: 0.1em solid #000;
+                    border-radius: 20%;
+                    display: inline-block;
+                    width: 30px;
+                    height: 30px;
+                    padding-left: 0.2em;
+                    padding-bottom: 0.3em;
+                    margin-right: 0.2em;
+                    vertical-align: bottom;
+                    color: transparent;
+                    transition: .2s;
+                    font-size: 30px;
+                }
+
+                &:active:before {
+                    transform: scale(0);
+                }
+
+            }
+
+            > input[type=checkbox] {
+                display: none;
+
+
+                &:checked + label:before {
+                    background-color: black;
+                    border-color: black;
+                    color: #fff;
+                }
+
+                &:disabled + label:before {
+                    transform: scale(1);
+                    border-color: #aaa;
+                }
+
+                &:checked:disabled + label:before {
+                    transform: scale(1);
+                    background-color: #000;
+                    border-color: #000;
+                }
+
+            }
+
+
+
+        }
+
+    }
+}

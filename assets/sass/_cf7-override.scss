@@ -1,0 +1,19 @@
+@mixin cf7-style {
+    div.wpcf7 .ajax-loader,
+    .div.wpcf7 .ajax-loader.is-active {
+        display: none !important;
+    }
+
+    div.wpcf7-response-output {
+        display: none !important;
+    }
+
+    form.wpcf7-form.invalid .form__group > input {
+        border-bottom: 1px solid #f00;
+    }
+
+    form.wpcf7-form.invalid .form__group > input::placeholder {
+        color: #f00;
+    }
+}
+

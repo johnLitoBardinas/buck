@@ -1,0 +1,30 @@
+// import the background for the clouds
+.cloud__layer {
+    margin: 0;
+    padding: 0;
+    background-image: url(../img/sky_clouds.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index: 50;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transition: all 3s ease-in-out;
+    background-position: 0 60%;
+
+    &.intro {
+        background-position: 0 90%;
+        visibility: visible;
+    }
+
+    &.up {
+        background-position: 0 105%;
+    }
+
+    &.down {
+        background-position: 0 85%;
+    }
+
+}

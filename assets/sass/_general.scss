@@ -1,0 +1,74 @@
+// FONTS
+@font-face {
+    font-family: 'Dezen Stencil';
+    src: url('../fonts/DezenStencil02-Condensed4.eot?#iefix') format('embedded-opentype'),  url('../fonts/DezenStencil02-Condensed4.woff') format('woff'), url('../fonts/DezenStencil02-Condensed4.ttf')  format('truetype'), url('../fonts/DezenStencil02-Condensed4.svg#DezenStencil02-Condensed4') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+  
+@font-face {
+    font-family: 'Dezen Stencil';
+    src: url('../fonts/DezenStencil02Bold.eot?#iefix') format('embedded-opentype'),  url('../fonts/DezenStencil02Bold.woff') format('woff'), url('../fonts/DezenStencil02Bold.ttf')  format('truetype'), url('../fonts/DezenStencil02Bold.svg#DezenStencil02Bold') format('svg');
+    font-weight: bold;
+    font-style: bold;
+}
+
+// UTILITIES
+.hd {
+    display: none;
+}
+
+.mt-18 {
+    margin-top: 18px;
+}
+
+.chk {
+    border: thin solid red;
+}
+
+
+
+// screen sizes
+$desktop-width-max:1800px;
+$desktop-width-min:1025px;
+
+$tablet-width-max:1024px;
+$tablet-width-min:768px;
+
+$mobile-width-max:767px;
+$mobile-width-min:300px;
+
+// MIXINS
+
+@mixin breakpoint-down($tablet-width-max) {
+	@media screen and (max-width: $tablet-width-max) {
+		@content;
+	}
+}
+
+@mixin breakpoint-width-range( $max-width: 1024px, $min-width: 0px) {
+	@media screen and (max-width: $max-width) and (min-width: $min-width) {
+		@content;
+	}
+}
+
+@mixin breakpoint-down-height($max-height: 1024px) {
+	@media screen and (max-height: $max-height) {
+		@content;
+	}
+}
+
+
+
+// GLOBAL STYLE
+html, body {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    overflow-x: hidden;
+}
+
+body {
+    background-color: #a4d4f8;
+    z-index: 5;
+}

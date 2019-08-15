@@ -1,0 +1,313 @@
+$container-max-width: 830px;
+$container-max-height: 250px;
+
+$container-rl-min-height: 250px;
+$container-rl-max-height: 255px;
+
+$social-media_links: (
+    ("facebook",     "../img/facebook.svg"),
+    ("instagram",     "../img/instagram.svg"),
+    ("linkedin",     "../img/linkedin.svg"),
+);
+
+@mixin rl-container {
+    min-height: $container-rl-min-height;
+    max-height: $container-rl-max-height;
+}
+
+// Logo
+.logo {
+    max-width: 10%;
+    position: fixed;
+    top: 25px;
+    left: 25px;
+    font-family: "Dezen Stencil";
+    font-weight: bold;
+    font-size: 1.3rem;
+    letter-spacing: 2px;
+    z-index: 2000;
+
+
+    @include breakpoint-width-range(1263px, 789px) {
+       max-width: 16%;
+    }
+
+    @include breakpoint-width-range(788px, 632px) {
+        max-width: 20%;
+    }
+
+    @include breakpoint-width-range(631px, 579px) {
+        max-width: 30%;
+    }
+
+    @include breakpoint-down(578px) {
+        max-width: 35%;
+    }
+
+    @include breakpoint-down(360px) {
+        max-width: 40%;
+    }
+}
+
+// Coming Soon
+.coming-soon__container {
+    position: fixed;
+    left: 24%;
+    top: 33%;
+    background-image: url("../img/coming_soon.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 692px;
+    height: 225px;
+    z-index: 50;
+    transition: all 1s ease-in;
+    animation-name: ComingSoonSlideUp;
+    animation-duration: 3s;
+
+    @include breakpoint-width-range(1600px, 1500px) {
+        top: 24%;
+        width: 50rem;
+    }
+
+    @include breakpoint-down(1024px) {
+        top: auto;
+        left: 0;
+        bottom: 25%;
+        width: 100%;
+    }
+
+    @include breakpoint-down(420px) {
+        top: auto;
+        left: 0;
+        bottom: 15%;
+        width: 100%;
+    }
+
+    &.down {
+        visibility: hidden !important;
+        display: none !important;
+        visibility: hidden;
+        transform: translate3d(0, 100%, 0);
+    }
+}
+
+.content__layer {
+    margin: 0;
+    padding: 0;
+    background-size: contain;
+    position: absolute;
+    z-index: 300;
+    top: 10%;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+    max-width: $container-max-width;
+    max-height: $container-max-height;
+    // overflow: hidden;
+
+    @include breakpoint-down($desktop-width-min) {
+        top: 25%;
+    }
+
+    @include breakpoint-down($tablet-width-min) {
+        top: 20%;
+        max-width: 85%;
+    }
+
+    @include breakpoint-down($mobile-width-max) {
+        max-width: 80%;
+    }
+
+    &.up {
+        animation-name: slideInUp;
+        animation-duration: 2s;
+    }
+
+    &.down {
+
+    }
+
+    .left-container {
+        float: left;
+        width: 60%;
+        box-sizing: border-box;
+
+        @include breakpoint-down($desktop-width-min) {
+            width: 50%;
+        }
+
+        @include breakpoint-down(767px) {
+            float: none;
+            width: 100%;
+        }
+
+        @include breakpoint-down(360px) {
+            // display: none;
+        }
+
+        .info__text-icon {
+            @include rl-container;
+            
+            h1 {
+                font-family: "Dezen Stencil";
+                font-weight: 200;
+
+                @include breakpoint-down(360px) {
+                    font-size: 2rem;
+                }
+            }
+
+            p {
+                font-family: 'Roboto';
+                font-size: 14px;
+            }
+
+            ul.cta__social-media {
+                list-style-type: none;
+                padding: 0;
+                margin: 0;
+
+                @include breakpoint-down($mobile-width-max) {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-around;
+                }
+        
+        
+                > li {
+                    display: inline-block;
+                    @each $s in $social-media_links {
+                        &.#{nth($s,1)} > a {
+                            background-image: url("#{nth($s,2)}");
+                            background-repeat: no-repeat;
+                            width: 30px;
+                            height: 30px;
+                            display: inline-block;
+                            margin-right: 20px;
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+
+    
+    .right-container {
+
+        float: right;
+        width: 40%;
+
+        @include breakpoint-down(767px) {
+            float: none;
+            width: 100%;
+        }
+
+        .info__button-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            @include rl-container;
+            min-height: 210px;
+
+            .info__button {
+                margin: auto;
+                letter-spacing: 1px;
+                font-family: "Roboto";
+                font-weight: bold;
+                font-size: 12px;
+                background-color: #16110D;
+                color: #FFFFFF;
+                width: 65%;
+                height: 30px;
+                border: none;
+                border-radius: 10px;
+                cursor: pointer;
+                border: none;
+                border-radius: 20px;
+            }
+        }
+
+        .subscribe__container {
+            max-height: 297px;
+            max-width: 408px;
+
+            &.down {
+                animation-name: slideOutDown;
+                animation-duration: 2s;
+                display: none;
+            }
+
+            .subscribe__heading {
+                text-align: left;
+                color: #16110D;
+                text-transform: uppercase;
+                font-family: "Dezen Stencil";
+                letter-spacing: 0;
+                font-size: 1.31rem;
+            }
+
+            .form__group {
+                margin-top: 16px;
+                max-height: 20px;
+
+                > input {
+
+                    &:focus {
+                        outline:none;
+                    }
+
+                    &::placeholder {
+                        color: #16110D;
+                        opacity: 0.6;
+                    }
+                    padding: 4px 5px;
+                    width: 100%;
+                    background-color: transparent;
+                    border: none;
+                    border-bottom: 1px solid #000;
+                    font-size: 1rem;
+                    background: box;
+                    box-sizing: border-box;
+                }
+            }
+
+            @include checkbox;
+
+            .subscribe__button {
+                margin-top: 30px;
+                width: 100%;
+                position: relative;
+
+                > input[type=submit] {
+                    font-family: "Roboto";
+                    width: 100%;
+                    border: none;
+                    height: 40px;
+                    border-radius: 19px;
+                    background-color: #000;
+                    color: #fff;
+                    letter-spacing: 1px;
+                    font-weight: bold;
+                    cursor: pointer;
+                }
+            }
+
+            // contact-form 7 
+            @include cf7-style;
+        }
+
+        .thank-you__container {
+
+            > img {
+                max-width: 100%;
+            }
+        }
+
+    }
+
+
+}

@@ -1,0 +1,64 @@
+// BLue Clouds intro working
+@keyframes blueCloudsInto {
+
+    from {
+        background-position: 0 1000%;
+
+        /*@include breakpoint-width-range() {
+          background-position: 0 1%;
+        }*/
+    }
+  
+    to {
+        background-position: 0 220%;
+
+        /*@include breakpoint-width-range() {
+          background-position: bottom;
+        }*/
+    }
+}
+
+// ComingSoon Working
+@keyframes ComingSoonSlideUp {
+    from {
+        transform: translate3d(0, 100%, 0);
+        visibility: hidden;
+        display: none;
+    }
+
+    50% {
+        transform: translate3d(0, 50%, 0);
+        visibility: hidden;
+        display: none;
+    }
+
+    to {
+        transform: translate3d(0, 0, 0);
+        visibility: visible !important;
+        display: block;
+    }
+}
+
+// Slide Up
+@keyframes slideInUp {
+    from {
+      transform: translate3d(0, 100%, 0);
+      visibility: visible;
+    }
+  
+    to {
+      transform: translate3d(0, 0, 0);
+    }
+}
+
+// Slide Down
+@keyframes slideOutDown {
+    from {
+      transform: translate3d(0, 0, 0);
+    }
+  
+    to {
+      visibility: hidden;
+      transform: translate3d(0, 100%, 0);
+    }
+  }
