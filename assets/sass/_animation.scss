@@ -2,19 +2,22 @@
 @keyframes blueCloudsInto {
 
     from {
-        background-position: 0 1000%;
-
-        /*@include breakpoint-width-range() {
-          background-position: 0 1%;
-        }*/
+        background-position: 0 600px;
     }
   
     to {
-        background-position: 0 220%;
+        @include breakpoint-down($desktop-width-max) {
+          background-position: 100px;
+        }
 
-        /*@include breakpoint-width-range() {
+        @include breakpoint-down(1050px) {
+          background-position: bottom !important;
+        }
+
+        @include breakpoint-down($desktop-width-min) {
           background-position: bottom;
-        }*/
+        }
+
     }
 }
 

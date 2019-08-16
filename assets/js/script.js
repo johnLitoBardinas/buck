@@ -13,6 +13,10 @@ $(function() {
         return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
     }
 
+    function isLessThan( width ) {
+        return $(window).width() < width;
+    }
+
     setTimeout(function() {
         $cloud_layer .addClass("intro");
         $house_layer.addClass("intro");
@@ -30,6 +34,11 @@ $(function() {
     $("#info__button").on("click", function(e){
         e.preventDefault();
 
+        if( isMobile() && isLessThan(500) ) {
+            $("#info__text-icon").remove();
+            $info_btn_container.css("min-height", "156px");
+        }
+
         if ( $subsribe_container.hasClass("up") || $subsribe_container.hasClass("down")) {
             $subsribe_container.removeClass("up down").addClass("up");
             $info_btn_container.fadeOut(100);
@@ -37,7 +46,7 @@ $(function() {
             $house_layer.removeClass("up down").addClass("up");
         }else{
             $cloud_layer.removeClass("intro").addClass("up");
-            $house_layer.removeClass("intro").addClass("up");
+            $house_layer.removeClass("intro").addClass("down");
             $info_btn_container.fadeOut(100);
             $subsribe_container.removeClass("hd").addClass("up");
         }
@@ -61,7 +70,7 @@ $(function() {
                 subscribe_btn.removeAttr("disabled");
                 $subsribe_container.addClass("down");
                 $cloud_layer.removeClass("up").addClass("down");
-                $house_layer.removeClass("up").addClass("up");
+                $house_layer.removeClass("down").addClass("up");
 
                 // fadeIn Thank You
                 $thank_you_container.show(100);
