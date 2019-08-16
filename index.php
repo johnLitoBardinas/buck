@@ -18,9 +18,11 @@ get_header();
 ?>
 
     <!-- FIXED LOGO -->
+    <a href="<?php echo site_url();?>">
     <div class="logo">
         BUCK STREET MARKET
     </div>
+    </a>
 
     <!-- INSERT CLOUD WITH REPEEAT -->
     <div class="cloud__layer" id="cloud__layer">
@@ -34,7 +36,7 @@ get_header();
 
         <div class="body__info" id="body__info">
             
-            <div class="left-container">
+            <div class="left-container" id="left-container">
 
                 <div class="info__text-icon" id="info__text-icon">
                     <h1>SHOP. DWELL. DINE.</h1>

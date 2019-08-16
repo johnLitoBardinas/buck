@@ -13,21 +13,6 @@
     font-style: bold;
 }
 
-// UTILITIES
-.hd {
-    display: none;
-}
-
-.mt-18 {
-    margin-top: 18px;
-}
-
-.chk {
-    border: thin solid red;
-}
-
-
-
 // screen sizes
 $desktop-width-max:1800px;
 $desktop-width-min:1025px;
@@ -35,8 +20,11 @@ $desktop-width-min:1025px;
 $tablet-width-max:1024px;
 $tablet-width-min:768px;
 
+$mobile-width: 450px;
 $mobile-width-max:767px;
 $mobile-width-min:300px;
+
+
 
 // MIXINS
 
@@ -59,6 +47,27 @@ $mobile-width-min:300px;
 }
 
 
+// UTILITIES
+.hd {
+    display: none;
+}
+
+.mt-18 {
+    margin-top: 18px;
+
+    @include breakpoint-width-range($desktop-width-max, 375px) {
+        padding-top: 15px;
+    }
+
+    @include breakpoint-down(375px) {
+        margin-top: 30px;
+    }
+}
+
+.chk {
+    border: thin solid red;
+}
+
 
 // GLOBAL STYLE
 html, body {
@@ -72,3 +81,4 @@ body {
     background-color: #a4d4f8;
     z-index: 5;
 }
+

@@ -24,8 +24,9 @@ $social-media_links: (
     font-family: "Dezen Stencil";
     font-weight: bold;
     font-size: 1.3rem;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     z-index: 2000;
+    color: #000;
 
 
     @include breakpoint-width-range(1263px, 789px) {
@@ -64,7 +65,7 @@ $social-media_links: (
     animation-name: ComingSoonSlideUp;
     animation-duration: 3s;
 
-    @include breakpoint-width-range(1600px, 1500px) {
+    @include breakpoint-width-range(1800px, 1500px) {
         top: 24%;
         width: 50rem;
     }
@@ -159,17 +160,30 @@ $social-media_links: (
 
         @include breakpoint-down(360px) {
             // display: none;
+            transition: all 1s ease-in-out;
         }
 
         .info__text-icon {
             @include rl-container;
+
+            @include breakpoint-down($mobile-width-max) {
+                transition: all 0.8s ease-in-out;
+                visibility: visible;
+
+                &.down {
+                    transform: translate3d(0, 500px, 0);
+                    visibility: hidden;
+                }
+            }
             
             h1 {
                 font-family: "Dezen Stencil";
                 font-weight: 200;
 
                 @include breakpoint-down(360px) {
-                    font-size: 2rem;
+                    font-size: 2.3rem;
+                    margin: 0;
+                    text-align: center;
                 }
             }
 
@@ -186,7 +200,7 @@ $social-media_links: (
                 @include breakpoint-down($mobile-width-max) {
                     display: flex;
                     flex-direction: row;
-                    justify-content: space-around;
+                    justify-content: space-evenly;
                 }
         
         
@@ -199,7 +213,11 @@ $social-media_links: (
                             width: 30px;
                             height: 30px;
                             display: inline-block;
-                            margin-right: 20px;
+                            margin-right: 2.5rem;
+
+                            @include breakpoint-down($mobile-width-max) {
+                                margin-right: 0;
+                            }
                         }
                     }
                 }
@@ -228,7 +246,24 @@ $social-media_links: (
 
             @include breakpoint-down($mobile-width-max) {
                 max-height: 157px;
-                min-height: 2rem;
+                min-height: 3rem;
+
+                transition: all 0.8s ease-in-out;
+                visibility: visible;
+
+                &.down {
+                    transform: translate3d(0, 500px, 0);
+                    visibility: hidden;
+                }
+            }
+
+            /** mobile */
+            @include breakpoint-down($mobile-width-min) {
+                transition: all 0.8s ease-in-out;
+                &.down {
+                    transform: translate3d(0, 500px, 0);
+                    visibility: hidden;
+                }
             }
 
             .info__button {
@@ -254,6 +289,17 @@ $social-media_links: (
             max-width: 408px;
             padding-top: 1rem;
 
+            @include breakpoint-down($mobile-width-max) {
+                transition: transform 0.7s ease;
+                position: absolute;
+                top: 0px;
+                transform: translateY(100%);
+
+                &.up {
+                    transform: translateY(0%);
+                }
+            }
+
             &.down {
                 animation-name: slideOutDown;
                 animation-duration: 2s;
@@ -267,6 +313,14 @@ $social-media_links: (
                 font-family: "Dezen Stencil";
                 letter-spacing: 0;
                 font-size: 1.31rem;
+
+                @include breakpoint-down(375px) {
+                    font-size: 1.2rem;
+                }
+
+                @include breakpoint-down(320px) {
+                    font-size: 1rem;
+                }
             }
 
             .form__group {
@@ -297,7 +351,7 @@ $social-media_links: (
             @include checkbox;
 
             .subscribe__button {
-                margin-top: 30px;
+                margin-top: 40px;
                 width: 100%;
                 position: relative;
 
@@ -320,6 +374,11 @@ $social-media_links: (
         }
 
         .thank-you__container {
+
+            @include breakpoint-down($mobile-width-max) {
+                position: absolute;
+                top: 20%;
+            }
 
             > img {
                 max-width: 100%;

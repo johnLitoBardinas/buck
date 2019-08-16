@@ -2,12 +2,12 @@
 @keyframes blueCloudsInto {
 
     from {
-        background-position: 0 600px;
+        background-position: 0 6000px;
     }
   
     to {
         @include breakpoint-down($desktop-width-max) {
-          background-position: 100px;
+          background-position: 150px;
         }
 
         @include breakpoint-down(1050px) {
@@ -24,20 +24,20 @@
 // ComingSoon Working
 @keyframes ComingSoonSlideUp {
     from {
-        transform: translate3d(0, 100%, 0);
+        transform: translate3d(0, 450px, 0);
         visibility: hidden;
         display: none;
     }
 
-    50% {
-        transform: translate3d(0, 50%, 0);
-        visibility: hidden;
-        display: none;
+    65% {
+      transform: translate3d(0, 150px, 0);
+      visibility: hidden;
+      display: none;
     }
 
     to {
         transform: translate3d(0, 0, 0);
-        visibility: visible !important;
+        visibility: visible;
         display: block;
     }
 }
