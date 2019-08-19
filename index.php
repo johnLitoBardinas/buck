@@ -17,12 +17,14 @@
 get_header();
 ?>
 
-    <!-- FIXED LOGO -->
-    <a href="<?php echo site_url();?>">
-    <div class="logo">
-        BUCK STREET MARKET
+    <div class="logo_container" id="logo_container">
+        <!-- FIXED LOGO -->
+        <a href="<?php echo site_url();?>">
+            <div class="logo">
+                BUCK STREET <br/>MARKET
+            </div>
+        </a>
     </div>
-    </a>
 
     <!-- INSERT CLOUD WITH REPEEAT -->
     <div class="cloud__layer" id="cloud__layer">
@@ -40,17 +42,17 @@ get_header();
 
                 <div class="info__text-icon" id="info__text-icon">
                     <h1>SHOP. DWELL. DINE.</h1>
-                    <p><b>BUCK STREET MARKET</b> is a brand new Camden destination: updating an internationally and recognized retail space to reflect modern standards of security, variety, comfort and aesthetic that the younger millennial customers has come to expect.</p>
+                    <p><b>Buck Street Market</b> is a brand new Camden destination. Just one minutes walk from Camden Town Underground Station, these recycled shipping containers will house the retail, food and drink all aimed at the ethically minded shopper, a rooftop garden, urban greenhouse and more.</p>
 
                     <ul class="cta__social-media" id="cta__social-media">
                         <li class="facebook">
-                            <a href="https://facebook.com"></a>
+                            <a href="<?php echo esc_url('https://www.facebook.com/BuckStreetMarket/?modal=admin_todo_tour'); ?>"></a>
                         </li>
-                        <li class="linkedin">
-                            <a href="https://linkedin.com"></a>
+                        <li class="twitter">
+                            <a href="<?php echo esc_url('https://twitter.com/buckstreetmkt?lang=en'); ?>"></a>
                         </li>
                         <li class="instagram">
-                            <a href="https://instagram.com"></a>
+                            <a href="<?php echo esc_url('https://www.instagram.com/buckstreetmarket/'); ?>"></a>
                         </li>
                     </ul>
                 </div>

@@ -7,7 +7,7 @@ $container-rl-max-height: 255px;
 $social-media_links: (
     ("facebook",     "../img/facebook.svg"),
     ("instagram",     "../img/instagram.svg"),
-    ("linkedin",     "../img/linkedin.svg"),
+    ("twitter",     "../img/twitter.svg"),
 );
 
 @mixin rl-container {
@@ -15,40 +15,60 @@ $social-media_links: (
     max-height: $container-rl-max-height;
 }
 
-// Logo
-.logo {
-    max-width: 10%;
-    position: fixed;
-    top: 25px;
-    left: 25px;
-    font-family: "Dezen Stencil";
-    font-weight: bold;
-    font-size: 1.3rem;
-    letter-spacing: 1px;
-    z-index: 2000;
-    color: #000;
-
+.logo_container {
+    position: relative;
+    margin: 0 auto;
+    height: 200px;
+    max-width: $container-max-width;
 
     @include breakpoint-width-range(1263px, 789px) {
-       max-width: 16%;
+        max-width: 70%;
     }
 
-    @include breakpoint-width-range(788px, 632px) {
-        max-width: 20%;
+    a {
+        text-decoration: none;
     }
 
-    @include breakpoint-width-range(631px, 579px) {
-        max-width: 30%;
-    }
+    // Logo
+    .logo {
+        position: relative;
+        top: 20px;
+        font-family: "Dezen Stencil";
+        font-weight: bold;
+        font-size: 2.5rem;
+        letter-spacing: 1px;
+        z-index: 2000;
+        color: #000;
+        line-height: 37px;
 
-    @include breakpoint-down(578px) {
-        max-width: 35%;
-    }
 
-    @include breakpoint-down(360px) {
-        max-width: 40%;
+
+
+        @include breakpoint-width-range(788px, 632px) {
+            max-width: 40%;
+            left: 60px;
+        }
+
+        @include breakpoint-width-range(631px, 579px) {
+            max-width: 30%;
+        }
+
+        @include breakpoint-down(578px) {
+            max-width: 55%;
+            left: 40px;
+        }
+        
+        @include breakpoint-down(375px) {
+            max-width: 60%;
+        }
+
+
+        @include breakpoint-down(360px) {
+            max-width: 80%;
+        }
     }
 }
+
 
 // Coming Soon
 .coming-soon__container {
@@ -105,7 +125,7 @@ $social-media_links: (
     background-size: contain;
     position: absolute;
     z-index: 300;
-    top: 2rem;
+    top: 6rem;
     right: 0;
     bottom: 0;
     left: 0;
@@ -143,6 +163,8 @@ $social-media_links: (
     &.down {
 
     }
+
+    
 
     .left-container {
         float: left;
@@ -274,13 +296,17 @@ $social-media_links: (
                 font-size: 12px;
                 background-color: #16110D;
                 color: #FFFFFF;
-                width: 65%;
+                width: 75%;
                 height: 30px;
                 border: none;
                 border-radius: 10px;
                 cursor: pointer;
                 border: none;
                 border-radius: 20px;
+
+                @include breakpoint-down(1024px) {
+                    font-size: .6rem;
+                }
             }
         }
 
