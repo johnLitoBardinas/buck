@@ -285,6 +285,10 @@ $social-media_links: (
                 }
             }
 
+            @include breakpoint-down(420px) {
+                margin-top: 2rem;
+            }
+
             /** mobile */
             @include breakpoint-down($mobile-width-min) {
                 transition: all 0.8s ease-in-out;
