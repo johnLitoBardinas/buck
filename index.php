@@ -42,7 +42,7 @@ get_header();
 
                 <div class="info__text-icon" id="info__text-icon">
                     <h1>SHOP. DWELL. DINE.</h1>
-                    <p>Buck Street Market is a brand new Camden destination. Bringing together flagship dining concepts, ethical and sustainable retail as well as boutique makers and market stalls. Buck Street Market will provide the perfect space for emerging designers, artists and chefs from London and beyond. <br/> Opening January 2020.</p>
+                    <p>Buck Street Market is a brand new Camden destination. Bringing together flagship dining concepts, ethical and sustainable retail as well as boutique makers and market stalls. Buck Street Market will provide the perfect space for emerging designers, artists and chefs from London and beyond. <h1 class="info__text-emphasize">Opening January 2020.</h1></p>
 
                     <ul class="cta__social-media" id="cta__social-media">
                         <li class="facebook">

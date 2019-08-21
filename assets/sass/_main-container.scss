@@ -207,6 +207,11 @@ $social-media_links: (
                     margin: 0;
                     text-align: center;
                 }
+
+                &.info__text-emphasize {
+                    text-transform: uppercase;
+                    font-size: 1.5rem;
+                }
             }
 
             p {
@@ -272,6 +277,7 @@ $social-media_links: (
 
                 transition: all 0.8s ease-in-out;
                 visibility: visible;
+                margin-top: 1rem;
 
                 &.down {
                     transform: translate3d(0, 500px, 0);
