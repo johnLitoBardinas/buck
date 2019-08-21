@@ -42,7 +42,7 @@ get_header();
 
                 <div class="info__text-icon" id="info__text-icon">
                     <h1>SHOP. DWELL. DINE.</h1>
-                    <p><b>Buck Street Market</b> is a brand new Camden destination. Just one minutes walk from Camden Town Underground Station, these recycled shipping containers will house the retail, food and drink all aimed at the ethically minded shopper, a rooftop garden, urban greenhouse and more.</p>
+                    <p>Buck Street Market is a brand new Camden destination. Bringing together flagship dining concepts, ethical and sustainable retail as well as boutique makers and market stalls. Buck Street Market will provide the perfect space for emerging designers, artists and chefs from London and beyond. <br/> Opening January 2020.</p>
 
                     <ul class="cta__social-media" id="cta__social-media">
                         <li class="facebook">
