@@ -20,9 +20,7 @@ get_header();
     <div class="logo_container" id="logo_container">
         <!-- FIXED LOGO -->
         <a href="<?php echo site_url();?>">
-            <div class="logo">
-                BUCK STREET <br/>MARKET
-            </div>
+            <div class="logo">&nbsp</div>
         </a>
     </div>
 

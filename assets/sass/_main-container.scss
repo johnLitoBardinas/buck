@@ -33,39 +33,27 @@ $social-media_links: (
     .logo {
         position: relative;
         top: 20px;
-        font-family: "Dezen Stencil";
-        font-weight: bold;
-        font-size: 2.5rem;
         letter-spacing: 1px;
         z-index: 2000;
-        color: #000;
-        line-height: 37px;
+        width: 241px;
+        height: 6rem;
+        background-image: url(../img/buck_street_icon.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        left: -20px;
 
-
-
-
-        @include breakpoint-width-range(788px, 632px) {
-            max-width: 40%;
-            left: 60px;
+        @include breakpoint-down(788px) {
+            left: 7rem;
         }
 
-        @include breakpoint-width-range(631px, 579px) {
-            max-width: 30%;
+        @include breakpoint-down(769px) {
+            left: 2.5rem;
         }
 
-        @include breakpoint-down(578px) {
-            max-width: 55%;
-            left: 40px;
-        }
-        
-        @include breakpoint-down(375px) {
-            max-width: 60%;
+        @include breakpoint-down(420px) {
+            left: 1.5rem;
         }
 
-
-        @include breakpoint-down(360px) {
-            max-width: 80%;
-        }
     }
 }
 
@@ -132,9 +120,10 @@ $social-media_links: (
     background-position: bottom;
     background-repeat: no-repeat;
     margin: 0 auto;
+    width: 85%;
     max-width: $container-max-width;
     max-height: $container-max-height;
-    // overflow: hidden;
+    // overflow: visible;
 
     @include breakpoint-down($desktop-width-min) {
         max-width: 60%;
@@ -270,6 +259,7 @@ $social-media_links: (
             align-items: center;
             @include rl-container;
             min-height: 210px;
+
 
             @include breakpoint-down($mobile-width-max) {
                 max-height: 157px;
